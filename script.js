@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const todoForm = document.querySelector(".todo-app__form");
+const todoForm = document.querySelector(".todo-app__form");
   const todoInput = document.querySelector(".todo-app__input");
   const todoList = document.querySelector(".todo-app__list");
   const todoStats = document.querySelector(".todo-app__stats");
@@ -99,4 +98,3 @@ document.addEventListener("DOMContentLoaded", () => {
   updateGreeting();
   updateCurrentDate();
   renderTodos();
-});
