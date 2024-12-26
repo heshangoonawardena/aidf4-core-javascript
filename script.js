@@ -1,6 +1,6 @@
-const manupa = {
-  name: "Manupa",
-  age: 23,
+const user = {
+  name: "Heshan",
+  age: 22,
 };
 
 const todoCreateButton = document.querySelector(".todo__create__button");
@@ -28,7 +28,7 @@ const updateGreeting = () => {
 
   const greeting = date.getHours() < 12 ? "Good Morning" : date.getHours() < 18 ? "Good Afternoon" : "Good Evening";
 
-  containerGreeting.textContent = `${greeting}, ${manupa.name} 👋`;
+  containerGreeting.textContent = `${greeting}, ${user.name} 👋`;
   containerTime.textContent = formattedTime;
   containerDate.textContent = `Today, ${formattedDate}`;
 };
