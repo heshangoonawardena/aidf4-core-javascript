@@ -7,6 +7,34 @@ const todoCreateButton = document.querySelector(".todo__create__button");
 const todoInput = document.querySelector(".todo__input");
 const todoContainer = document.querySelector(".todo__container");
 
+// Function to update current date n time when the app is loaded
+const updateGreeting = () => {
+  const date = new Date();
+  const containerTime = document.querySelector(".container__header__time");
+  const containerDate = document.querySelector(".container__header__date");
+  const containerGreeting = document.querySelector(".container__header__greeting");
+
+  const formattedTime = date.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" });
+  const formattedDate = date.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "long", year: "numeric" }).replace(/,/, '').replace(/(\d+)/, (day) => {
+    const suffix = day % 10 === 1 && day !== 11
+      ? "st"
+      : day % 10 === 2 && day !== 12
+        ? "nd"
+        : day % 10 === 3 && day !== 13
+          ? "rd"
+          : "th";
+    return `${day}${suffix}`;
+  });
+
+  const greeting = date.getHours() < 12 ? "Good Morning" : date.getHours() < 18 ? "Good Afternoon" : "Good Evening";
+
+  containerGreeting.textContent = `${greeting}, ${manupa.name} 👋`;
+  containerTime.textContent = formattedTime;
+  containerDate.textContent = `Today, ${formattedDate}`;
+};
+
+updateGreeting();
+
 const todoValues = [];
 let todoElements = [];
 
